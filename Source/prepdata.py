@@ -44,7 +44,7 @@ def run_query(query, database, s3_output):
 
     return results
 
-table = "u_data"
+table = "clauscato_u_data"
 s3_athena_ouput = "s3://%s/athena-results/" % (bucket)
 query = 'SELECT count(distinct userid) AS userCnt, count(distinct movieid) AS movieCnt FROM "%s"."%s";' % (glue_database, table)
 res = run_query(query, glue_database, s3_athena_ouput)
